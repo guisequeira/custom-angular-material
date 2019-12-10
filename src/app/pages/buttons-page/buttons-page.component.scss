@@ -1,0 +1,39 @@
+:host{
+  width: 100%;
+}
+
+.buttons{
+
+  &-title{
+    display: flex;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: .8rem;
+  }
+
+  &-sample{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    &-row{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &-container{
+    display: flex;
+    // width: 100%;
+    flex-direction: column;
+    padding: 1.6rem;
+
+
+  }
+  &-item{
+    align-items: center;
+    &-type{
+      width: 25%;
+      // min-width: 3rem;
+    }
+  }
+}

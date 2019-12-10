@@ -1,0 +1,166 @@
+// Import library functions for theme creation.
+@import './node_modules/@angular/material/theming';
+@import '../../../theme/fonts';
+
+@mixin candy-carousel-theme($theme) {
+  // Extract the palettes you need from the theme definition.
+  // $primary: map-get($theme, primary);
+  // $accent: map-get($theme, accent);
+
+  // Define any styles affected by the theme.
+
+
+  .mat {
+    &-button {
+      line-height: 100%;
+      margin: 10px;
+      font-size: 14px;
+      padding: 16px 32px;
+      text-transform: uppercase;
+      border-radius: 30px;
+      min-width: 310px;
+
+      &:disabled {
+        background-color: lighten(#000000, 0.2);
+        color: #ffffff;
+        opacity: 0.5;
+      }
+
+      &.mat {
+
+        &-primary {
+          background-color: #000000;
+          color: #ffffff;
+
+          &:hover {
+            background-color: #2f333b;
+          }
+
+          &:active {
+            background-color: #212026;
+          }
+        }
+
+        &-accent {
+          background-color: #ff0e18;
+          color: #ffffff;
+
+          &:hover {
+            background-color: #d12026;
+          }
+
+          &:active {
+            background-color: #b4242a;
+          }
+        }
+
+        &-success {
+          background-color: #4caf50;
+          color: #ffffff;
+
+          &:hover {
+            background-color: #8bc34a;
+          }
+
+          &:active {
+            background-color: #009688;
+          }
+        }
+
+      }
+    }
+
+    &-stroked {
+      &-button {
+        line-height: 100%;
+        margin: 10px;
+        font-size: 12px;
+        padding: 14px 32px;
+        text-transform: uppercase;
+        border-radius: 30px;
+        max-width: 195px;
+        border: 2px solid #45484e;
+        color: #45484e;
+
+        &:disabled{
+          border-color: #d8d8d8;
+          background: none;
+          color: #c2c2c2;
+
+        }
+        &:hover{
+          &:enabled{
+            // border-color: #2f333b;
+            background-color: #2f333b;
+            color: #ffffff;
+          }
+        }
+        &:active{
+          border-color: #45484e;
+          color: #ffffff;
+          background-color: #45484e;
+        }
+
+
+
+        &.mat-primary {
+          border-color: #0078ff;
+          background: none;
+          color: #0078ff;
+
+          &:hover{
+            &:enabled{
+
+              background-color: #0078ff;
+              color: #ffffff;
+            }
+          }
+          &:active{
+            color: #ffffff;
+            background-color: #2e90ff;
+          }
+        }
+
+      }
+    }
+  }
+
+
+
+  // background-color: #000000;
+  // Use mat-color to extract individual colors from a palette.
+  // border: none;
+  // border-color: mat-color($accent, A400);
+}
+
+
+@mixin candy-carousel-typography($config) {
+  .mat-button {
+    font: {
+      family: mat-font-family($config, body-1);
+      size: mat-font-size($config, body-1);
+      weight: mat-font-weight($config, body-1);
+    }
+  }
+}
+
+// Include non-theme styles for core.
+@include mat-core();
+
+// Define your application's custom theme.
+$primary: mat-palette($mat-indigo);
+$accent: mat-palette($mat-pink, A200, A100, A400);
+$theme: mat-light-theme($primary, $accent);
+
+// Include theme styles for Angular Material components.
+// @include angular-material-theme($theme);
+
+// Include theme styles for your custom components.
+@include candy-carousel-theme($theme);
+// @include dark-theme($theme);
+
+
+.buttons-sample-row {
+  display: flex;
+  flex-direction: column;
+}

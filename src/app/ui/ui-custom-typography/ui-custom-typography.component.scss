@@ -1,0 +1,15 @@
+@import '../../../theme/fonts';
+
+// @mixin candy-carousel-typography($config) {
+//   .mat-button {
+//     font: {
+//       family: mat-font-family($config, body-1);
+//       size: mat-font-size($config, body-1);
+//       weight: mat-font-weight($config, body-1);
+//     }
+//   }
+// }
+
+:host{
+   font-family: 'Montserrat', sans-serif;
+}
